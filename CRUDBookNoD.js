@@ -26,10 +26,10 @@ app.get('/books', (req, res) => {
     res.json(books);
 })
 
-app.get('/books:id', (req, res) => {
+app.get('/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
-    res.json(books);
+    res.json(book);
 })
 
 app.post('/books', (req, res) => {
@@ -39,12 +39,12 @@ app.post('/books', (req, res) => {
         author: req.body.author
     };
     book.push(book);
-    res.json(books);
+    res.json(book);
 })
 
 app.put('/bools/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
-    if (!book) res.status
+    if (!book) res.status(404).send('Book not found');
     book.title = req.body.title;
     book.author = req.body.author;
     res.send(book);
