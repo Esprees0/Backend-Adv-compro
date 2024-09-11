@@ -1,10 +1,15 @@
+// Description: REST API with MongoDB
+// npm install express mongoose body-parser
+// Run this file with node MongoDBREST.js
+// Test with Postman
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 // Database connection
 mongoose.connect(
-  "mongodb://admin:SBFsqa14913@node40731-noderest.proen.app.ruk-com.cloud:11344",
+  "mongodb://admin:EPLdxy15197@node65866-kanchayaapp.proen.app.ruk-com.cloud:11585",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
